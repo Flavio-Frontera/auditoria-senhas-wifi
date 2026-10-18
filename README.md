@@ -153,9 +153,13 @@ auditoria-senhas-wifi/
 │   ├── PdfReport.js
 │   ├── SecurePasswordStore.js
 │   └── SecureRandom.js
+├── .gitignore
 ├── App.js
-├── index.js
+├── LICENSE
+├── README.md
 ├── app.json
+├── index.js
+├── package-lock.json
 └── package.json
 ```
 
@@ -171,7 +175,7 @@ auditoria-senhas-wifi/
 
 - [Node.js](https://nodejs.org/) (versão LTS)
 - [Git](https://git-scm.com/)
-- O app **Expo Go** no celular (Android ou iOS)
+- O app **Expo Go** no celular (Android ou iOS), compatível com o **Expo SDK 54 ou superior**. O projeto usa `expo-file-system/legacy`, que só existe a partir dessa versão.
 
 2- Clonar o repositório
 
@@ -210,7 +214,7 @@ Escaneie o QR Code que aparece no terminal com o app **Expo Go** (Android) ou co
 
 6- Configurar a biometria
 
-Na primeira abertura, o app exige configurar a autenticação do aparelho. Para isso, o celular precisa ter biometria ou senha de tela cadastrada.
+Na primeira abertura, o app exige configurar a autenticação do aparelho. O celular precisa ter **sensor biométrico** (impressão digital ou reconhecimento facial) com uma digital ou rosto cadastrado, e a senha de tela serve como alternativa quando a biometria falha. Aparelhos sem hardware biométrico não conseguem abrir o app e veem a mensagem "Dispositivo não compatível".
 
 </details>
 </div>
@@ -229,10 +233,10 @@ Na primeira abertura, o app exige configurar a autenticação do aparelho. Para 
 - **Senhas arquivadas** ficam no `expo-secure-store`, que usa o Keychain (iOS) e o Keystore (Android).
 - **Relatórios** ficam no `AsyncStorage` e guardam só a senha **mascarada** (`*****...`), nunca a senha completa.
 - **O gerador** usa `expo-crypto` (aleatoriedade criptográfica) com *rejection sampling* para não ter viés na escolha dos caracteres, e embaralha o resultado final.
-- **A tela de proteção** cobre o conteúdo quando o app vai para segundo plano, evitando que a senha apareça no seletor de apps.
+- **A tela de proteção** cobre o conteúdo quando o app vai para segundo plano, reduzindo a chance de a senha aparecer no seletor de apps.
 - **A exportação em CSV** neutraliza células que começam com `=`, `+`, `-` ou `@`, evitando injeção de fórmula ao abrir no Excel.
 - **O PDF** escapa todo o conteúdo antes de montar o HTML.
-- **Nenhum dado sai do aparelho**, com uma única exceção: o teste de velocidade, que faz requisições para `speed.cloudflare.com` e só roda se você confirmar manualmente que está conectado na rede testada.
+- **Nenhum dado sai do aparelho sem uma ação sua.** A única comunicação automática com a internet é o teste de velocidade, que faz requisições para `speed.cloudflare.com` e só roda se você confirmar manualmente que está conectado na rede testada. Exportar PDF, CSV ou backup abre o menu de compartilhamento do sistema, e quem decide o destino é você.
 
 </details>
 </div>
