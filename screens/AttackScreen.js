@@ -104,9 +104,6 @@ async function collectWifiStats() {
   };
 }
 
-// Gera o PDF e grava direto na pasta do app. Não usamos o arquivo temporário do
-// expo-print (cache/Print): no Android/Expo Go ele não pode ser lido, movido
-// nem compartilhado ("Not allowed to read file under given URL").
 async function savePdf(html, fileName) {
   const { base64 } = await Print.printToFileAsync({ html, base64: true });
   const dest = FileSystem.documentDirectory + fileName;
