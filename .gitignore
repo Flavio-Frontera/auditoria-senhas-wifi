@@ -1,0 +1,53 @@
+# Dependências
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+expo-env.d.ts
+
+# Builds nativos gerados (projeto gerenciado pelo Expo)
+/android
+/ios
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# TypeScript
+*.tsbuildinfo
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+
+# Chaves e certificados de assinatura
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# NUNCA versionar backups do app (contêm senhas em texto plano)
+wifi_audit_backup_*.json
+comparacao_senhas_*.csv
+relatorios_*.csv
+Auditoria_*.pdf
+relatorio_*.pdf
+Relatorio_*.txt
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
