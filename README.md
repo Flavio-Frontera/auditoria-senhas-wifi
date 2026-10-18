@@ -272,12 +272,13 @@ Na primeira abertura, o app exige configurar a autenticação do aparelho. O cel
 
 ---
 
-## Autor
+## Equipe
 
-Desenvolvido por **Flávio**, estudante de Tecnologia em Redes de Computadores na FATEC Bauru, como projeto de auditoria de segurança em redes WiFi.
+Projeto desenvolvido por estudantes de Tecnologia em Redes de Computadores na FATEC Bauru, como projeto de auditoria de segurança em redes WiFi.
 
-- GitHub: [@Flavio-Frontera](https://github.com/Flavio-Frontera)
-- LinkedIn: [Flávio Batista Cavalcante](https://www.linkedin.com/in/fl%C3%A1vio-batista-cavalcante-348a121a4)
+- **Flávio Batista Cavalcante** · [GitHub](https://github.com/Flavio-Frontera) · [LinkedIn](https://www.linkedin.com/in/fl%C3%A1vio-batista-cavalcante-348a121a4)
+- **Yasmim Cunha**
+- **Marcelo Stecher**
 
 ---
 
